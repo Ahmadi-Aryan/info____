@@ -1,35 +1,50 @@
-int v[128];
-int v2[128];
+int a[128];
+int a2[128];
 int n;
 int nr=0;
+
 void citire()
 {
+    cout<<"introduceti un numar: ";
     cin>>n;
 }
-void to_bin(){
+
+void in_bin(){
+
     while(n!=0){
-        v[nr]=n%2;
+
+        a[nr]=n%2;
         nr++;
         n/=2;
+
     }
 }
-void change_vector(){
+
+void schimba_vector(){
+
     for(int i = 0; i< nr; i++)
     {
-        v2[nr-1-i]=v[i];
+        a2[nr-1-i]=a[i];
     }
+
 }
+
 void afisare()
 {
+    cout<<endl<<"numarul in cod binar este: ";
+
     for (int i = 0; i<nr; i++)
     {
-        cout<<v2[i]<<" ";
+        cout<<a2[i]<<" ";
     }int nr=0;
     cout<<endl;
 }
+
 int main(){
+
     citire();
-    to_bin();
-    change_vector();
+    in_bin();
+    schimba_vector();
     afisare();
+
 }
