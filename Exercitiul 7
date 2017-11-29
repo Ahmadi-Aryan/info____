@@ -1,0 +1,59 @@
+#include <iostream>
+
+
+using namespace std;
+
+
+int a[18];
+int n;
+int nr=0;
+
+void citire()
+{
+    cout<<"introduceti un numar de max 9 cifre: ";
+    cin>>n;
+}
+
+void in_vector(){
+
+    while(n!=0){
+
+        a[nr]=n%10;
+        nr++;
+        n/=10;
+
+    }
+
+    nr = nr*2;
+
+}
+
+void in_vector_2(){
+
+    for(int i = 0; i< nr; i++)
+    {
+        a[nr-1-i]=a[i];
+    }
+
+}
+
+void afisare()
+{
+    cout<<endl<<"vectorul este: ";
+
+    for (int i = 0; i<nr; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main()
+{
+
+    citire();
+    in_vector();
+    in_vector_2();
+    afisare();
+
+}
