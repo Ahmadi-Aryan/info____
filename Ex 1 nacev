@@ -1,0 +1,78 @@
+#include <iostream>
+
+using namespace std;
+
+
+unsigned int i,n, minim;
+
+int a[100];
+
+void citire()
+{
+
+    cout<<"n=";
+
+    cin>>n;
+
+    for(i=0;i<n;i++)
+
+    {
+
+        cout<<"a["<<i<<"]=";
+
+        cin>>a[i];
+
+    }
+
+}
+
+void calculeaza_minim()
+{
+    minim = a[0];
+    for(i=0;i<n;i++)
+    {
+        if (minim > a [i])
+        {
+            minim = a[i];
+        }
+    }
+
+}
+
+void inlocuire()
+{
+    for(i=0;i<n;i++)
+    {
+        if (a [i]==minim)
+        {
+            a[i]=minim*2;
+        }
+    }
+}
+
+void afisare()
+{
+
+    for(i=0;i<n;i++)
+    {
+
+        cout<<a[i]<<" ";
+
+    }
+
+}
+
+int main()
+{
+
+    citire();
+
+    calculeaza_minim();
+
+    inlocuire();
+
+    afisare();
+
+    return 0;
+
+}
